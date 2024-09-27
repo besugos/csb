@@ -73,10 +73,6 @@ function jogar() {
         height: 100vh; /* Para centralizar verticalmente */
     }
 
-    .full-page {
-        padding: 20px 40px;
-    }
-
     .instructions {
         margin-left: 30px;
     }

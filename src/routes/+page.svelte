@@ -1,17 +1,14 @@
-
-<div class="mid-section">
+<div class="mid-section full-page">
     <h1>Bem vindo à Casa de Caridade São Benedito</h1>
-    <p>
-        "Umbanda é coisa séria, para gente séria"
-    </p>
+    <p>"Umbanda é coisa séria, para gente séria"</p>
     <div class="centered-image">
-        <img src="ponto_csb3.webp" class="ponto"/>
+        <img
+            src="csb3pf.png"
+            class="ponto"
+            alt="Casa de Caridade São Benedito"
+        />
     </div>
-    </div>
-
-
-
-
+</div>
 
 <style>
     .mid-section {
@@ -19,7 +16,7 @@
     }
 
     .ponto {
-        height: 500px;
+        width: 60vw;
         margin-top: 28px;
     }
 
@@ -27,5 +24,5 @@
         display: flex;
         justify-content: center;
     }
-    
+
 </style>

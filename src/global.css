@@ -17,3 +17,17 @@ button {
     font-size: 14px;
     font-weight: bold;
 }
+
+.full-page {
+    padding: 20px 40px;
+}
+
+input {
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 8px;
+    padding: 8px 8px;
+    border-radius: 10px;
+    border: 0px;
+}

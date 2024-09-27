@@ -57,7 +57,7 @@ loadRecords();
 </script>
 
 
-<div class="container">
+<div class="container full-page">
     <h1>Corrente da saúde</h1>
 
     {#if successMessage}
@@ -114,16 +114,6 @@ loadRecords();
         background-color: rgb(226, 248, 229);
         padding: 16px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    input {
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        margin-bottom: 8px;
-        padding: 8px 8px;
-        border-radius: 10px;
-        border: 0px;
     }
 
     .div-format {
