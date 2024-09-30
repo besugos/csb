@@ -234,19 +234,6 @@ function closeModal() {
         text-align: justify;
     }
 
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Escurece o fundo */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10; /* Para garantir que o overlay fique acima do conteúdo */
-    }
-
     td {
         border: none;
         width: 6rem;
@@ -276,9 +263,6 @@ function closeModal() {
             margin: 32px 0 16px 0;
         }
 
-    Modal {
-        max-width: 50vw;
-    }
 
     @media (max-width: 768px) {
     

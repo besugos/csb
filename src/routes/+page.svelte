@@ -1,5 +1,5 @@
 <div class="mid-section full-page">
-    <h1><span>Bem vindo à</span><span>Casa de Caridade</span><span>São Benedito</span></h1>
+    <h1><span>Bem vindo à</span><span>&nbspCasa de Caridade&nbsp</span><span>São Benedito</span></h1>
     <p>"Umbanda é coisa séria, para gente séria"</p>
     <div class="centered-image">
         <img
