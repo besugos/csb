@@ -1,5 +1,5 @@
 <div class="mid-section full-page">
-    <h1>Bem vindo à Casa de Caridade São Benedito</h1>
+    <h1><span>Bem vindo à</span><span>Casa de Caridade</span><span>São Benedito</span></h1>
     <p>"Umbanda é coisa séria, para gente séria"</p>
     <div class="centered-image">
         <img
@@ -23,6 +23,23 @@
     .centered-image {
         display: flex;
         justify-content: center;
+        margin-bottom: 16px;
     }
+
+    @media (max-width: 768px) {
+    
+    .full-page {
+        padding: 8px;
+        text-align: center;
+    }
+
+    h1 {
+        display: flex;
+        line-height: 2rem;
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+
+}
 
 </style>

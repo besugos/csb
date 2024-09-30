@@ -230,6 +230,10 @@ function closeModal() {
         margin-top: 60px;
     }
 
+    p {
+        text-align: justify;
+    }
+
     .modal-overlay {
         position: fixed;
         top: 0;
@@ -266,6 +270,39 @@ function closeModal() {
     .flex-container {
         display: flex;
         justify-content: flex-end;
+    }
+
+    h2 {
+            margin: 32px 0 16px 0;
+        }
+
+    Modal {
+        max-width: 50vw;
+    }
+
+    @media (max-width: 768px) {
+    
+        .full-page {
+            padding: 8px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.2rem;
+        }
+
+        table {
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            margin: 16px 0;
+            text-align: center;
+        }
+
     }
 
 </style>

@@ -67,7 +67,7 @@ loadRecords();
     <div class="form-container">
         <form on:submit|preventDefault={handleSubmit}>
             <div class="div-format">
-                <h1>Cadastro</h1>
+                <h2>Cadastro</h2>
                 <input type="text" name="nome" placeholder="Nome" bind:value={name}/>
                 <input
                     type="date"
@@ -114,6 +114,7 @@ loadRecords();
         background-color: rgb(226, 248, 229);
         padding: 16px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        margin: 16px 0;
     }
 
     .div-format {
@@ -125,7 +126,7 @@ loadRecords();
         align-items: center;
     }
 
-    h1 {
+    h1, h2 {
         justify-content: center;
         align-items: center;
         margin-bottom: 20px;
@@ -144,6 +145,21 @@ loadRecords();
         border: 1px solid #c3e6cb;
         border-radius: 5px;
     }
+
+    @media (max-width: 768px) {
+    
+    .full-page {
+        padding: 8px;
+        text-align: center;
+    }
+
+    h1 {
+        display: flex;
+        line-height: 2rem;
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+}
 
 
 </style>

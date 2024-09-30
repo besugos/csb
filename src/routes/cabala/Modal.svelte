@@ -30,7 +30,7 @@
         padding: 0 20px 10px 20px;
         border-radius: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        width: 75vh; /* Largura do modal */
+        width: 75vw; /* Largura do modal */
     }
 
     .close-button {
@@ -40,4 +40,5 @@
         cursor: pointer;
         color: black;
     }
+
 </style>

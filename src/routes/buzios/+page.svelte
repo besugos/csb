@@ -86,4 +86,32 @@ function jogar() {
         margin-bottom: 10px;
     }
 
+    @media (max-width: 768px) {
+    
+    .full-page {
+        padding: 8px;
+        text-align: center;
+    }
+
+    h1 {
+        display: flex;
+        line-height: 2rem;
+        flex-direction: column;
+    }
+
+    p {
+        line-height: 1.2rem;
+        text-align: justify;
+    }
+
+    ul {
+        text-align: justify;
+        line-height: 1.2rem;
+    }
+
+    li {
+        margin-bottom: 16px;
+    }
+}
+
 </style>
