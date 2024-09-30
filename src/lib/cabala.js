@@ -144,7 +144,7 @@ const posicao = {
     testa: "Rege a imagem que passa aos outros",
     nuca: "Rege a força que impulsiona",
     direita: "Rege o lado material da vida",
-    esquera: "Rege o lado espiritual da vida",
+    esquerda: "Rege o lado espiritual da vida",
     placenta: "Rege a essência",
     principal: "Rege a totalidade do caminho",
     primordial: "Rege a espiritualidade e a vida (método Odulefa Modugbaye)",
