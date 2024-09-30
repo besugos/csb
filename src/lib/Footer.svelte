@@ -4,6 +4,7 @@
         { href: "/corrente", label: "Corrente da saúde" },
         { href: "/buzios", label: "Jogo de Búzios" },
         { href: "/cabala", label: "Cabala Africana" },
+        
     ];
 
 </script>
@@ -14,6 +15,7 @@
             <a {href}>{label}</a>
         {/each}
     </div>
+    <hr/>
 <div class="name">
     <span class="footer-text"><strong>Casa de São Benedito©</strong></span>
     <span class="footer-text-space">&nbsp-&nbsp</span>
@@ -38,6 +40,10 @@
         min-height: 100px;
     }
 
+    hr {
+        width: 85vw;
+    }
+
     .name {
         display: flex;
         flex-direction: row;
@@ -55,7 +61,6 @@
         flex-flow: wrap;
         width: 95vw;
         justify-content: space-evenly;
-        margin-top: 16px;
     }
 
     a {
@@ -68,14 +73,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 16px;
+        margin: 16px 0;
     }
 
     .name {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 16px;
+        margin: 16px 0;
     }
 
     .footer-text-space {
