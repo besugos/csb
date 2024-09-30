@@ -151,7 +151,13 @@ function closeModal() {
         Axé!
     </p>
 
-    <input type="date" class="cabala-date" bind:value={date} />
+    <h2>Instruções</h2>
+    <p>Através da Cabala Africana, são possíveis dois cálculos distintos. O primeiro é a cabala de nascimento, que rege a vida do indivíduo como um todo. Para isso, é preciso selecionar no campo abaixo a data de nascimento.</p>
+    <p>O segundo cálculo é a cabala de regência de um dado ano na vida do indivíduo. Para isso, selecione a data de aniversário no ano desejado.</p>
+    <br/>
+
+    <label for="date">Selecione abaixo a data desejada:</label>
+    <input name="date" type="date" class="cabala-date" bind:value={date} />
     <button on:click={calcula}>Calcular</button>
 
     <div class="cabala-results">
@@ -203,10 +209,16 @@ function closeModal() {
 </div>
 
 <style>
+    label {
+        display: block;
+        margin-top: 8px;
+    }
+
     .cabala-date {
         background-color: #ddd;
         margin: 16px 16px 16px 0;
         max-width: 200px;
+        height: 18px;
         flex-grow: 1 1 1;
     }
 
