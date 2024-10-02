@@ -1,17 +1,20 @@
 <script>
+    import { page } from "$app/stores";
+    import { goto } from '$app/navigation';
     import { supabase } from "$lib/supabaseClient";
-    let posts = [];
   
+    let post = {}
+
     async function loadPosts() {
       const { data, error } = await supabase
         .from("posts")
         .select("*")
-        .order("created_at", { ascending: false }); // Posts mais recentes primeiro
-  
+        .eq("id", $page.params.id);
+
       if (error) {
         console.error("Erro ao carregar posts:", error);
       } else {
-        posts = data;
+        post = data[0];
       }
     }
   
@@ -27,32 +30,23 @@
   </script>
   
   <div class="full-page">
-    <h1>Posts Recentes</h1>
-  
-    {#if posts.length === 0}
-      <p>Nenhum post encontrado.</p>
-    {:else}
-      {#each posts as post}
-      <a href="/blog/{post.id}">
         <div class="post">
-            <div class="img-wrapper">
-                <img src={post.image} alt="Imagem do post" />
-            </div>
-            <div class="text-wrapper">
-                <h2>{post.title}</h2>
-                <p><small>{fixDate(post.created_at)}</small></p>
-            </div>
-            
+            <img src={post.image} alt="Imagem do post" />
+            <h2>{post.title}</h2>
+            <p><small>{fixDate(post.created_at)}</small></p>
+            <p class="post-content">{post.content}</p>
+            <button on:click={() => goto('/blog')}>Voltar</button>
           </div>
-      </a> 
-      {/each}
-    {/if}
+
+
+      
   </div>
 
   
   <style>
     .post {
         display: flex;
+        flex-direction: column;
       border: 1px solid #ddd;
       padding: 20px;
       margin-bottom: 20px;
@@ -61,28 +55,12 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       text-decoration: none;
     }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    .post:hover {
-        background-color: #e8fdeb;
-    }
-
-    .img-wrapper {
-        width: 200px;
-        height: 100px;
-        margin-right: 1.5rem;
-    }
   
     .post img {
-      width: 100%;
-      height: 100%;
+      width: 40%;
       border-radius: 20px;
-      object-fit: cover;
-      border: 1px solid #ddd;
+      object-fit: contain;
+      margin-bottom: 16px;
     }
 
     .post-content {
@@ -90,5 +68,20 @@
         margin-top: 16px;
         white-space: pre-wrap;
     }
+
+    button {
+    width: auto; 
+    display: inline-block; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    align-self: flex-end; 
+    margin-top: 16px; 
+    margin-right: 8px;
+  }
+
+  button:hover {
+    background-color: #015028;
+  }
+
   </style>
   

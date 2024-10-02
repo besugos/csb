@@ -58,6 +58,8 @@
 <div class="container full-page">
   <h1>Corrente da saúde</h1>
 
+  <p class="disclaimer">A corrente de São Benedito para a saúde é uma corrente de oração, realizada na fé dos pretos-velhos. Ocorre todas as segundas-feiras, das 18 às 21h. Para participar, basta se inscrever no formulário abaixo, informando os dados necessários. Uma vez inscrito, na próxima segunda-feira, às 18h, coloque um copo com água para ser fluidificada pelos mentores de cura, e se mantenha em oração durante este período, de preferência de roupas claras e em local calmo. Ao final da corrente, às 21h, bebe-se a água. A inscrição vale para a segunda-feira seguinte, e pode ser repetida quantas vezes se julgar necessário.</p>
+
   {#if successMessage}
     <div class="alert success">{successMessage}</div>
   {/if}
@@ -122,10 +124,13 @@
     align-items: center;
   }
 
-  h1,
+  h1 {
+    align-self: start;
+    margin-bottom: 20px;
+  }
+
   h2 {
-    justify-content: center;
-    align-items: center;
+    align-self: center;
     margin-bottom: 20px;
   }
 
@@ -141,6 +146,13 @@
     color: #155724;
     border: 1px solid #c3e6cb;
     border-radius: 5px;
+  }
+
+  .disclaimer {
+  
+    margin-bottom: 2rem;
+    text-align: justify;
+
   }
 
   @media (max-width: 768px) {

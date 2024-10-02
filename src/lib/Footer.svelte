@@ -1,6 +1,7 @@
 <script>
     const links = [
         { href: "/", label: "Home" },
+        { href: "/blog", label: "Blog" },
         { href: "/corrente", label: "Corrente da saúde" },
         { href: "/buzios", label: "Jogo de Búzios" },
         { href: "/cabala", label: "Cabala Africana" },
