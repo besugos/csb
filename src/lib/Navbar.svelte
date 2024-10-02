@@ -3,13 +3,15 @@
 
   const links = [
     { href: "/", label: "Home", short: "Home" },
+    { href: "/blog", label: "Blog", short: "Blog" },
+    { href: "/post", label: "Posts", short: "Posts" },
     { href: "/corrente", label: "Corrente da saúde", short: "Corrente" },
     { href: "/buzios", label: "Jogo de Búzios", short: "Búzios" },
     { href: "/cabala", label: "Cabala Africana", short: "Cabala" },
     { href: "/inscritos", label: "Inscritos", short: "Inscritos" },
   ];
 
-  const localOnly = ["/inscritos"];
+  const localOnly = ["/inscritos", "/post"];
 </script>
 
 <nav>

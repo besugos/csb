@@ -26,6 +26,11 @@
         margin-bottom: 16px;
     }
 
+    img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
     @media (max-width: 768px) {
     
     .full-page {
