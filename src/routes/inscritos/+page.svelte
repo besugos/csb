@@ -1,5 +1,7 @@
 <script>
   import { supabase } from "$lib/supabaseClient";
+  // import { load } from "./+page.server.js";
+
 
   export let data = [];
 
@@ -21,24 +23,31 @@
     return formattedDateTime.replace(", ", " - ");
   }
 
-  function formatBirthdate(birthdate = '') {
-    const brokenDate = birthdate.split('-');
+  function formatDate(date = '') {
+    const brokenDate = date.split('T')[0].split('-');
     return `${brokenDate[2]}/${brokenDate[1]}/${brokenDate[0]}`
   }
 
-  async function loadRecords() {
-    const { data: recordsData, error } = await supabase
-      .from("records")
-      .select()
-      .order('created_at', { ascending: false }); 
-    if (error) {
-      console.error("Erro ao carregar registros:", error);
-    } else {
-      data.records = recordsData;
-    }
-}
+  function formatDateTime(date = '') {
+    const brokenDate = date.split('T')[0].split('-');
+    const time = date.split('T')[1].split(':');
+    return `${brokenDate[2]}/${brokenDate[1]}/${brokenDate[0]} - ${time[0]}:${time[1]}`;
+  }
 
-  loadRecords();
+//   async function loadRecordsSupabase() {
+//     const { data: recordsData, error } = await supabase
+//       .from("records")
+//       .select()
+//       .order('created_at', { ascending: false }); 
+//     if (error) {
+//       console.error("Erro ao carregar registros:", error);
+//     } else {
+//       data.records = recordsData;
+//     }
+// }
+
+
+// loadRecordsSupabase();
 </script>
 
 <div class="container full-page">
@@ -53,9 +62,9 @@
     </tr>
     {#each data.records as record}
       <tr>
-        <td>{formatDateTimeBR(record.created_at)}</td>
-        <td>{record.name}</td>
-        <td>{formatBirthdate(record.birthdate)}</td>
+        <td>{formatDateTime(record.createdAt)}</td>
+        <td>{record.nome}</td>
+        <td>{formatDate(record.data)}</td>
         <td>{record.reason}</td>
       </tr>
     {/each}

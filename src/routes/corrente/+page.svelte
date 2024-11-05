@@ -8,51 +8,93 @@
 
   export let data;
 
+  // async function handleSubmit() {
+  //   // Verifica se os campos estão preenchidos
+  //   if (!name || !birthdate || !reason) {
+  //     alert("Por favor, preencha todos os campos!");
+  //     return;
+  //   }
+
+  //   // Chama a função de inserção do Supabase
+  //   const { data: newRecord, error } = await supabase
+  //     .from("records")
+  //     .insert([{ name, birthdate, reason }]);
+
+  //   // Manipula o erro caso haja
+  //   if (error) {
+  //     console.error("Erro ao inserir dados:", error);
+  //     alert("Erro ao cadastrar: " + error.message);
+  //     return;
+  //   }
+
+  //   // Limpa os campos do formulário
+  //   name = "";
+  //   birthdate = "";
+  //   reason = "";
+
+  //   // await loadRecords();
+
+  //   successMessage = "Cadastro realizado com sucesso!";
+  //   setTimeout(() => {
+  //     successMessage = ""; // Limpa a mensagem após 3 segundos
+  //   }, 3000);
+  // }
+
+  // async function loadRecords() {
+  //   const { data: recordsData, error } = await supabase
+  //     .from("records")
+  //     .select();
+  //   if (error) {
+  //     console.error("Erro ao carregar registros:", error);
+  //   } else {
+  //     data.records = recordsData; // Atualiza a lista de registros
+  //   }
+  // }
+
+  // // Carrega os registros ao iniciar o componente
+  // loadRecords();
+
   async function handleSubmit() {
     // Verifica se os campos estão preenchidos
     if (!name || !birthdate || !reason) {
-      alert("Por favor, preencha todos os campos!");
-      return;
+        alert("Por favor, preencha todos os campos!");
+        return;
     }
 
-    // Chama a função de inserção do Supabase
-    const { data: newRecord, error } = await supabase
-      .from("records")
-      .insert([{ name, birthdate, reason }]);
+    try {
+        // Faz a requisição POST para o Google Apps Script
+        const response = await fetch("https://script.google.com/macros/s/AKfycbzKNqP-4snb5lwfkhYbWhR3wWJPriYV6OP4r2tLFviLz6hnDcQgbY0eNspPO7p28OymEA/exec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name, birthdate, reason })
+        });
 
-    // Manipula o erro caso haja
-    if (error) {
-      console.error("Erro ao inserir dados:", error);
-      alert("Erro ao cadastrar: " + error.message);
-      return;
+        if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.success) {
+            // Limpa os campos do formulário
+            name = "";
+            birthdate = "";
+            reason = "";
+
+            successMessage = "Cadastro realizado com sucesso!";
+            setTimeout(() => {
+                successMessage = ""; // Limpa a mensagem após 3 segundos
+            }, 3000);
+        } else {
+            alert("Erro ao cadastrar: " + result.message);
+        }
+    } catch (error) {
+        console.error("Erro ao inserir dados:", error);
+        alert("Erro ao cadastrar: " + error.message);
     }
+}
 
-    // Limpa os campos do formulário
-    name = "";
-    birthdate = "";
-    reason = "";
-
-    await loadRecords();
-
-    successMessage = "Cadastro realizado com sucesso!";
-    setTimeout(() => {
-      successMessage = ""; // Limpa a mensagem após 3 segundos
-    }, 3000);
-  }
-
-  async function loadRecords() {
-    const { data: recordsData, error } = await supabase
-      .from("records")
-      .select();
-    if (error) {
-      console.error("Erro ao carregar registros:", error);
-    } else {
-      data.records = recordsData; // Atualiza a lista de registros
-    }
-  }
-
-  // Carrega os registros ao iniciar o componente
-  loadRecords();
 </script>
 
 <div class="container full-page">
